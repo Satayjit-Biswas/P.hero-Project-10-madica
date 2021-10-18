@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+.btn_custom {
+  background-color: #2dd6c1;
+  padding: 8px 20px 10px 20px;
+  line-height: 24px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  transition: .3s;
+  cursor: pointer;
+}
+.btn_custom:hover {
+  background-color: #1eac9b;
+  color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Lora', serif;
+}
+p{
+  color: #90929d;
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Extra large devices (large desktops, 1200px and up)*/
+
+@media (min-width: 1400px) { 
+	.container{
+		max-width: 1350px;
+	}
+}
+@media (min-width: 1200px) { 
+	.container{
+		max-width: 1200px;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 1199px) { 
+  /* home page date area  */
+	.date_area_wrap .date_area {
+    position: static;
+    border: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .date_area_wrap .date_area p{
+    max-width: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  .App .date_area_wrap {
+    padding: 0;
+}
+}
+
+@media (max-width: 991.98px) {
+  
+}
+
+/*Medium devices (tablets, 767px and down)*/
+@media (max-width: 767px) {
+	
+}
+
+/*Small devices (landscape phones, 575px and down)*/
+@media (max-width: 575px) {
+	
 }

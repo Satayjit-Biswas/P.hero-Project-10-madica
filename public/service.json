@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-1.png",
+        "title": "Paralysis Disability",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    },
+    {
+        "id": 2,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-2.png",
+        "title": "Brain Disability",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    }
+    ,
+    {
+        "id": 3,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-3.png",
+        "title": "Medical Service",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    },
+    {
+        "id": 4,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-4.png",
+        "title": "Emergency Services",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    },
+    {
+        "id": 5,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-5.png",
+        "title": "Heart of Surgery",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    }
+    ,
+    {
+        "id": 6,
+        "img": "https://demo.themexbd.com/html/smartdev/assets/images/service-6.png",
+        "title": "Tablet Paralysis",
+        "details": "Experienced and devoted doctors are ready to help you with your problems. Donec vel pellentesque mas."
+    }
+]
