@@ -1,6 +1,6 @@
 # MEDICA
 
-Live [Site...](https://github.com/facebook/create-react-app)
+Live [Site...](https://medica-390f6.web.app/)
 
 ## website using
 
