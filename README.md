@@ -1,6 +1,6 @@
 # MEDICA
 
-LIVE [SITE](https://github.com/facebook/create-react-app).
+Live [Site...](https://github.com/facebook/create-react-app)
 
 ## website using
 
@@ -16,4 +16,4 @@ LIVE [SITE](https://github.com/facebook/create-react-app).
 
 * Best doctor
 * International Service
-* 24/7 Service
+* 24/7 Service 

@@ -46,11 +46,11 @@ const Login = () => {
                     <div className="login_form">
                         <form onSubmit={ LoginwithEmail }>
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Email address</label>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                                 <input onBlur={handleLogemail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label">Password</label>
+                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                 <input onBlur={handleLogPass} type="password" className="form-control" id="exampleInputPassword1"/>
                             </div>
                             <div className="err">

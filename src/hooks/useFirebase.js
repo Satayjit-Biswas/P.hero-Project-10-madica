@@ -47,7 +47,6 @@ const useFirebase = () =>{
             setDataComing(false);
             
         })
-        console.log('notsubscibed :',notsubscibed)
         return() => notsubscibed;
     },[])
 

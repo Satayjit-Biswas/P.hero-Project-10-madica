@@ -62,6 +62,10 @@ p{
   }
   .App .login_form ,.App .register_form { 
     width: 100%;
+    margin-top: 40px;
+  }
+  .App .header_login_area {
+    margin-left: 0px;
   }
 }
 
