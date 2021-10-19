@@ -4,48 +4,47 @@ import initializeAuthentication from "../components/User/Firebase/Firebase.init"
 
 initializeAuthentication();
 const useFirebase = () =>{
-    const [users,setUsers] = useState({});
-
+    const [user,setUser] = useState({});
+    const [dataComing,setDataComing] = useState(true)
     const auth = getAuth();
     // sign in 
-    const signIngoogle = ()=>{
+    const signIngoogle = () => {
+        setDataComing(true);
         const googleprovider = new GoogleAuthProvider();
         signInWithPopup(auth, googleprovider)
             .then((result) => {
-                setUsers(result.user);
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const email = error.email;
-                const credential = GoogleAuthProvider.credentialFromError(error);
-            });
+                setUser(result.user);
+            })
+            .finally(()=> setDataComing(false))
     }
     // State Changed 
     useEffect(()=>{
         const notsubscibed = onAuthStateChanged(auth,user => {
-            if (users){
-                setUsers(users)
+            if (user){
+                setUser(user)
             }
             else{
-                setUsers({})
+                setUser({})
             }
+            setDataComing(false);
+            
         })
         return() => notsubscibed;
     },[])
 
     // log out 
     const logOut = () =>{
+        setDataComing(true);
         signOut(auth)
         .then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
+        })
+        .finally(() => setDataComing(false));
     }
     return {
-        users,
+        user,
         signIngoogle,
-        logOut
+        logOut,
+        dataComing
     }
 }
 

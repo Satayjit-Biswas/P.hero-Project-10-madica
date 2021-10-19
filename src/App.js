@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Error from './components/Error/Error';
 import AuthProvider from './components/Context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -36,9 +37,9 @@ function App() {
             <Route exact path='/contact'>
               <Contact></Contact>
             </Route>
-            <Route path='/details/:id'>
+            <PrivateRoute path='/details/:id'>
                 <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
             <Route exact path='/login'>
               <Login></Login>
             </Route>

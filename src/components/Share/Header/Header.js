@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-    const {users, logOut} = useAuth()
-    console.log(users)
+    const {user, logOut} = useAuth()
+    console.log(user)
     return (
         <div>
             <TopHeader></TopHeader>
@@ -34,17 +34,17 @@ const Header = () => {
                         </ul>
                         <div className="header_login_area">
                                 {
-                                    users.email ?
+                                    user.email ?
                                     <div className="d-flex">
                                     <button onClick={logOut} className="btn_custom">log out</button>
                                     <div className="login_area_details">
                                         <div className="login_area_img">
-                                            <img src={users.photoURL?users.photoURL:userlogo} className="img-fluid" alt="" />
+                                            <img src={user.photoURL?user.photoURL:userlogo} className="img-fluid" alt="" />
                                         </div>
-                                        <p>{users.displayName}</p>
+                                        <p>{user.displayName}</p>
                                     </div> 
-                                </div>:<NavLink to='/login' className="btn_custom">log in</NavLink>}
-                            
+                                </div>:<NavLink to='/login' className="btn_custom">log in</NavLink>
+                                }
                         </div>
                     </div>
                 </div>

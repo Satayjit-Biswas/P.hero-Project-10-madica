@@ -61,5 +61,7 @@ p{
 
 /*Small devices (landscape phones, 575px and down)*/
 @media (max-width: 575px) {
-	
+	.top_nav{
+    display: none;
+  }
 }
