@@ -8,7 +8,6 @@ import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const {user, logOut} = useAuth()
-    console.log(user)
     return (
         <div>
             <TopHeader></TopHeader>

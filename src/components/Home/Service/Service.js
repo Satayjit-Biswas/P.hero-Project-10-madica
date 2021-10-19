@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../../assets/service-1.png'
 import useService from '../../../hooks/useService';
 import './Service.css'
 import ServiceData from './ServiceData';

@@ -1,18 +1,35 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged,createUserWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged,createUserWithEmailAndPassword ,updateProfile,signInWithEmailAndPassword  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../components/User/Firebase/Firebase.init";
+import img from '../assets/user_logo.png'
 
 initializeAuthentication();
 const useFirebase = () =>{
     const [user,setUser] = useState({});
     const [dataComing,setDataComing] = useState(true)
     const auth = getAuth();
-    // Email password 
-    const handleRegistration = (e) => {
-        console.log('i am reg')
-        e.preventDefault()
+
+    // update name 
+
+    const updateName =(name) => {
+        updateProfile(auth.currentUser, {
+            displayName: name, photoURL: img
+        }).then(() => {
+            console.log('Update User')
+            window.location.href = "/home";
+        })
     }
-    // sign in 
+
+    // Email password 
+    const handleRegistration = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+     // Email sign 
+    const handleEmailSign = (email, password) => {
+        setDataComing(true);
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+    // sign in google
     const signIngoogle = () => {
         setDataComing(true);
         const googleprovider = new GoogleAuthProvider();
@@ -30,6 +47,7 @@ const useFirebase = () =>{
             setDataComing(false);
             
         })
+        console.log('notsubscibed :',notsubscibed)
         return() => notsubscibed;
     },[])
 
@@ -46,7 +64,9 @@ const useFirebase = () =>{
         signIngoogle,
         logOut,
         dataComing,
-        handleRegistration
+        handleRegistration,
+        handleEmailSign,
+        updateName
     }
 }
 

@@ -51,7 +51,18 @@ p{
 }
 
 @media (max-width: 991.98px) {
-  
+  .btn_custom {
+    padding: 4px 20px 7px 20px;
+  }
+  .App .nav-item{
+    text-align: center;
+  }
+  .App .header_login_area{
+    justify-content: center;
+  }
+  .App .login_form ,.App .register_form { 
+    width: 100%;
+  }
 }
 
 /*Medium devices (tablets, 767px and down)*/

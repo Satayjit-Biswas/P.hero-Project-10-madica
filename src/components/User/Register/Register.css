@@ -25,3 +25,7 @@
     padding: 8px 20%;
     border: 1px solid #2dd6c1;
 }
+.err{
+    color: red;
+    margin-bottom: 5px;
+}
