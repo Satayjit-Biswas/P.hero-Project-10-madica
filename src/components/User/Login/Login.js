@@ -1,10 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const {signIngoogle} = useAuth()
+    const { signIngoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const uri = location.state?.from || '/';
+    const handleGoogleLogin = () =>{
+        signIngoogle()
+            .then((result) =>{
+                history.push(uri)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+    }
     return (
         <div>
             <div className="container">
@@ -24,7 +36,7 @@ const Login = () => {
                             </div>
                         </form>
                         <div className="login_others">
-                            <button onClick={signIngoogle}>Login With Google</button>
+                            <button onClick={handleGoogleLogin}>Login With Google</button>
                             <p className="mt-3">Create a New <NavLink to="/register">Register</NavLink></p>
                         </div>
                     </div>

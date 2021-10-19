@@ -9,7 +9,6 @@ const PrivateRoute = ({children,...rest}) => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
     }
-
     return (
         <Route
             {...rest}
@@ -18,9 +17,8 @@ const PrivateRoute = ({children,...rest}) => {
                     state:{from:location}
                     }}
                 ></Redirect>
-            }
+                }
             >
-            
         </Route>
     );
 };

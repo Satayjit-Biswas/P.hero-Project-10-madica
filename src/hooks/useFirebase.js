@@ -11,11 +11,7 @@ const useFirebase = () =>{
     const signIngoogle = () => {
         setDataComing(true);
         const googleprovider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleprovider)
-            .then((result) => {
-                setUser(result.user);
-            })
-            .finally(()=> setDataComing(false))
+        return signInWithPopup(auth, googleprovider);
     }
     // State Changed 
     useEffect(()=>{
