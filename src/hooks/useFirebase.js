@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged,createUserWithEmailAndPassword  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../components/User/Firebase/Firebase.init";
 
@@ -7,6 +7,11 @@ const useFirebase = () =>{
     const [user,setUser] = useState({});
     const [dataComing,setDataComing] = useState(true)
     const auth = getAuth();
+    // Email password 
+    const handleRegistration = (e) => {
+        console.log('i am reg')
+        e.preventDefault()
+    }
     // sign in 
     const signIngoogle = () => {
         setDataComing(true);
@@ -40,7 +45,8 @@ const useFirebase = () =>{
         user,
         signIngoogle,
         logOut,
-        dataComing
+        dataComing,
+        handleRegistration
     }
 }
 

@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Register.css'
 
 const Register = () => {
+    const { handleRegistration } = useAuth();
+    const [regname,setRegname] = useState(' ')
+    const [regemail,setEmail] = useState(' ')
+    const [regpass,setPass] = useState(' ')
+    const handleName = e=>{
+        setRegname(e.target.value);
+    }
+    const handleEmail = e=>{
+        setEmail(e.target.value);
+    }
+    const handlePass = e=>{
+        setPass(e.target.value);
+    }
     return (
         <div>
             <div className="container">
                 <div className="register_area">
                     <div className="register_form">
-                        <form>
+                        <form onSubmit={handleRegistration }>
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" className="form-label">Name</label>
-                                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <input onBlur={handleName} required type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                             </div>
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <input onBlur={handleEmail} required type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                             </div>
                             <div className="mb-3">
                                 <label for="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1"/>
+                                <input  onBlur={handlePass}type="password" required className="form-control" id="exampleInputPassword1"/>
                             </div>
                             <div className="text-center">
                                 <button type="submit" className="btn_custom">Register</button>

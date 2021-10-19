@@ -43,7 +43,8 @@ const Header = () => {
                                         </div>
                                         <p>{user.displayName}</p>
                                     </div> 
-                                </div>:<NavLink to='/login' className="btn_custom">log in</NavLink>
+                                </div>:<div><NavLink to='/login' className="btn_custom">log in</NavLink>
+                                <NavLink to='/register' className="btn_custom header_Sign_in_btn">Sign in</NavLink></div>
                                 }
                         </div>
                     </div>
