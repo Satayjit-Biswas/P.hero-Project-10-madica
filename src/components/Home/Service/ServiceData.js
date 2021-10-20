@@ -12,8 +12,8 @@ const ServiceData = (props) => {
                     <div className="service_area_img">
                         <img  src={img} alt="" />
                     </div> 
-                    <h5> <a href="/">{title}</a></h5>
-                    <p>{details}</p>
+                    <h5 className="Header_title" onClick={HandleService}>{title}</h5>
+                    <p>{details.substring(0,100)}...</p>
                     <button onClick={HandleService} className="btn_custom">Read More</button>
                 </div>
             </div>

@@ -36,3 +36,12 @@
 .service_area_sub_box h5 a:hover{
     color: #496bf2;
 }
+.Header_title {
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .3s;
+}
+.Header_title:hover{
+    color: #496bf2;
+
+}
